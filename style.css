@@ -1,0 +1,237 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #081b29;
+    color: #ffffff;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.nav {
+    font-size: 20px;
+    display: flex;
+    background-color: rgba(8, 27, 41, 0.9);
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav h1 {
+    color: #f33757;
+    font-size: 1.8em;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1em;
+    transition: color 0.3s;
+    font-size: 22px;
+}
+
+nav a:hover {
+    color: #f33757;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    animation: fadeIn 1s ease-in;
+}
+
+.profile {
+    margin-top: 100px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.photo {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    position: relative;
+    animation: moveLeftAndFill 2s ease-in-out forwards;
+}
+
+.photo img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 5px solid #00b7c2;
+    transition: border-color 0.3s;
+    animation: pulse 2s infinite;
+}
+
+.photo::after {
+    content: '';
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: rgba(0, 183, 194, 0.2);
+    z-index: -1;
+    animation: glow 3s infinite;
+}
+
+.details {
+    flex: 2;
+    padding: 20px;
+}
+
+.details h2 {
+    color: #f33757;
+    font-size: 2em;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.details h3{
+    font-size: 22px;
+    color: #f33757;
+}
+.details p, .details ul, .details .buttons {
+    margin: 10px 0;
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+.details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.details li {
+    background: #1a1a1a;
+    margin: 10px 0;
+    padding: 10px;
+    border-left: 4px solid #00b7c2;
+    transition: color 0.3s;
+}
+
+.details li:hover {
+    color: #f33757;
+    cursor: pointer;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.buttons a {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #00b7c2;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.buttons a:hover {
+    /* background-color: #007d8a;
+    transform: scale(1.05); */
+    transition: 0.3s;
+    box-shadow: 0 0 5px cyan,
+    0 0 25px cyan, 0 0 50px cyan,
+    0 0 100px cyan, 0 0 200px cyan;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes moveLeftAndFill {
+    0% { transform: translateX(0); width: 300px; height: 300px; }
+    100% { transform: translateX(-150px); width: 400px; height: 400px; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes glow {
+    0% { transform: scale(1); opacity: 0.4; }
+    50% { transform: scale(1.2); opacity: 0.6; }
+    100% { transform: scale(1); opacity: 0.4; }
+}
+
+@keyframes moveShape {
+    0% { transform: translate(0, 0) scale(0.8); }
+    50% { transform: translate(50vw, 50vh) scale(1.2); }
+    100% { transform: translate(0, 0) scale(0.8); }
+}
+
+footer {
+    background-color: #06131d;
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 1em;
+}
+
+.location {
+    font-size: 1.2em;
+    margin-top: 20px;
+    color: #ffffff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: #081b29;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(#0ef, #ff22e6);
+    border-radius: 20px;
+}
+
+@media screen and (max-width: 624px) {
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .photo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        width: 100%; 
+        animation: none; 
+    }
+    .photo img {
+        width: 250px; 
+        height: 250px;
+        margin: 0 auto; 
+    }
+}
