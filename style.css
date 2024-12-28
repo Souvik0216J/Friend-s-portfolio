@@ -234,4 +234,7 @@ footer {
         height: 250px;
         margin: 0 auto; 
     }
+    .details p{
+        font-size: 1rem;
+    }
 }
