@@ -111,7 +111,7 @@ nav a:hover {
 }
 .details p, .details ul, .details .buttons {
     margin: 10px 0;
-    font-size: 1.2em;
+    font-size: 1.5em;
     line-height: 1.6;
 }
 
@@ -121,7 +121,7 @@ nav a:hover {
 }
 
 .details li {
-    background: #1a1a1a;
+    /* background: #1a1a1a; */
     margin: 10px 0;
     padding: 10px;
     border-left: 4px solid #00b7c2;
@@ -202,7 +202,7 @@ footer {
 
 /* Scrollbar */
 ::-webkit-scrollbar {
-    width: 7px;
+    width: 10px;
 }
 
 ::-webkit-scrollbar-track {
