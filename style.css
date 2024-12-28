@@ -220,7 +220,7 @@ footer {
     border-radius: 20px;
 }
 
-@media not all and (min-width: 640px) {
+/* @media not all and (min-width: 640px) {
     .container {
         display: flex;
         justify-content: center;
@@ -248,5 +248,132 @@ footer {
     }
     .nav h1{
         font-size: 24px;
+    }
+} */
+
+@media (max-width: 639px) {
+    .container {
+        padding: 20px;
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    .profile {
+        margin-top: 20px;
+        height: auto;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .photo {
+        transform: none;
+        margin: 0 auto;
+        width: 100%;
+        animation: none;
+    }
+    
+    .photo img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .photo::after {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .details {
+        padding: 20px 10px;
+    }
+    
+    .details h2 {
+        font-size: 1.8em;
+    }
+    
+    .details p {
+        font-size: 16px;
+    }
+    
+    .details ul {
+        font-size: 16px;
+    }
+    
+    .nav {
+        padding: 10px 20px;
+    }
+    
+    .nav h1 {
+        font-size: 24px;
+    }
+    
+    nav a {
+        font-size: 16px;
+        margin: 0 8px;
+    }
+    
+    .buttons {
+        justify-content: center;
+    }
+}
+
+/* Tablet devices (portrait tablets and large phones, 640px and up) */
+@media (min-width: 640px) and (max-width: 1023px) {
+    .container {
+        padding: 30px;
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    .profile {
+        margin-top: 40px;
+        height: auto;
+        gap: 20px;
+    }
+    
+    .photo {
+        transform: none;
+        animation: none;
+    }
+    
+    .photo img {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .photo::after {
+        width: 280px;
+        height: 280px;
+    }
+    
+    .details {
+        padding: 20px;
+    }
+    
+    .details h2 {
+        font-size: 2em;
+    }
+    
+    .details p, .details ul {
+        font-size: 1.2em;
+    }
+}
+
+/* Fix height issues for all screen sizes */
+@media (max-height: 800px) {
+    #home, #about {
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    .profile {
+        height: auto;
+        margin: 60px 0;
+    }
+}
+
+/* Adjust animation for larger screens */
+@media (min-width: 1024px) {
+    .photo {
+        animation: moveLeftAndFill 2s ease-in-out forwards;
     }
 }
