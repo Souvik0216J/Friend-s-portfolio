@@ -13,7 +13,12 @@ body {
     overflow-x: hidden;
     position: relative;
 }
-
+#home{
+    height: 100vh;
+}
+#about{
+    height: 100vh;
+}
 .nav {
     font-size: 20px;
     display: flex;
@@ -122,6 +127,7 @@ nav a:hover {
 
 .details li {
     /* background: #1a1a1a; */
+
     margin: 10px 0;
     padding: 10px;
     border-left: 4px solid #00b7c2;
@@ -235,9 +241,12 @@ footer {
         margin: 0 auto; 
     }
     .details p{
-        font-size: 1rem;
+        font-size: 16px;
     }
-    .nav{
-        font-size: 1rem;
+    .nav a{
+        font-size: 16px;
+    }
+    .nav h1{
+        font-size: 24px;
     }
 }
